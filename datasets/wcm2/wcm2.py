@@ -14,7 +14,7 @@
 # limitations under the License.
 
 
-"""XL-Sum abstractive summarization dataset."""
+"""WCM-v2 text classification dataset."""
 import os
 import datalabs
 from datalabs.tasks import TextClassification
@@ -32,14 +32,13 @@ _CITATION = """\
 }
 """
 _DESCRIPTION = """\
-WCM is based on the data from Wikipedia. It covers seven languages including Mongolian, Tibetan,
-Uyghur, Kazakh, Korean, Cantonese and Standard Chinese. Dataset collect the Wikipedia
-page dumps and the Wikipedia category dumps of the languages in question. The purpose of
-WCM is to evaluate the zero-shot cross-lingual ability of MPLMs on the Chinese minority languages.
+WCM is based on the data from Wikipedia. It covers seven languages including Mongolian, Tibetan, Uyghur, Kazakh, Korean,
+Cantonese and Standard Chinese. Dataset collect the Wikipedia page dumps and the Wikipedia category dumps of the 
+languages in question. The purpose of WCM is to evaluate the zero-shot cross-lingual ability of MPLMs on the Chinese minority languages.
 By referring to the category system of Chinese Wikipedia, WCM is divided to 10 categories for the classification task: Art, Geography,
 History, Nature, Science, Personage, Technology, Education, Economy and Health.
 
-WCM-v2 adjusts the number of samples in each category and language, and the distribution is relatively more balanced.
+WCM-v2 adjusts the number of samples in each category and language compared to the former version, and the distribution is relatively more balanced.
 
 For more information, please refer to https://arxiv.org/pdf/2202.13558.pdf 
 
@@ -62,7 +61,7 @@ _LANGUAGES = ["zh","yue","bo","mn","ug","kk","ko"]
 
 class WCM2Config(datalabs.BuilderConfig):
     def __init__(self, data_url, **kwargs):
-        """BuilderConfig for wcm2
+        """BuilderConfig for WCM2
         Args:
           data_url: `string`, url to the dataset
           **kwargs: keyword arguments forwarded to super.
